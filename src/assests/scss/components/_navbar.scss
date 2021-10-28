@@ -1,0 +1,79 @@
+.sidebar{
+  width: 24rem;
+  padding: 3rem 5rem;
+  border-right: 2px solid rgba(0, 0, 0, 0.092);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.044);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  .sidebarheader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .sidebarlogo{
+      display: flex;
+      align-items: center;
+      font-family: "Nova Flat";
+      font-size: 2.5rem;
+      color: #1a237e;
+      margin-bottom: 1rem;
+      .logo {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-right: 1rem;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      list-style-type: none;
+
+       li {
+          margin-bottom: 0.75rem;
+          color: #bdbdbd;
+          font-size: 1.1rem;
+          line-height: 1rem;
+          cursor: pointer;
+          width: 15rem;
+          padding: 10px 1.6rem;
+          margin-bottom: 1rem;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          font-weight: 500;
+
+             i {
+               display: inline-block;
+               margin-right: 1.5rem;
+             }
+             &:active {
+              color: rgba(49, 46, 129, 1);
+              font-weight: 600;
+              box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.044);
+              border: 1px solid rgba(0, 0, 0, 0.092);
+              span {
+                color: rgba(49, 46, 129, 1);
+              }
+             }
+             &:hover {
+              box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.044);
+            }
+          
+       }
+    }
+  
+    p {
+      width: 100%;
+      padding: 0 1.6rem;
+      font-weight: 500;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
