@@ -62,8 +62,8 @@
         }
 
         .profilewrapper {
-          width: 22rem;
-          height: 26rem;
+          width: 25rem;
+          height: 29rem;
           background-repeat: no-repeat;
           background-size: cover;
           background-position: 50% 50%;
@@ -74,7 +74,7 @@
           color: white;
          
           @media(min-width: 368px) {
-            width: 18rem;
+            width: 20rem;
           }
 
           .image-control {
@@ -118,7 +118,7 @@
               .profilebar {
                 position: relative;
                 height: 1rem;
-                width: 4rem;
+                width: 6rem;
                 cursor: pointer;
                 &::after {
                   content: "";
@@ -135,6 +135,9 @@
                   &::after {
                     background-color: rgba(255, 255, 255, 0.6);;
                   }
+                }
+                @media(min-width: 368px) {
+                  width: 5rem;
                 }
               }
             }
