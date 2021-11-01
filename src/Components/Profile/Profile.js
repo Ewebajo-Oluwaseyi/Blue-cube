@@ -1,23 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 function Profile({images}) {
-  //  images.images.map(img => {console.log(img.photo)})
+ // console.log(images)
   const[currentPhoto, setCurrentPhoto] = useState(0);
   const[currentProfile, setCurrentProfile] = useState(null);
-  //const [active, setActive] = useState(false);
   const profileEl = useRef()
 
   useEffect(() => {
+
     if (images.photos[0]) {
       profileEl.current.style.backgroundImage = `url("${images.photos[currentPhoto].regular_url}")` ;
     }
   
   }, [currentPhoto, images.photos]);
+
   const handleClick = (e) => {
     if (e.target.classList.contains("profilebar")) {
       setCurrentPhoto((currentPhoto + 1) % 4);
       profileEl.current.style.backgroundImage = `url("${images.photos[currentPhoto].regular_url}")` ;
-      console.log(currentPhoto);
+    //  console.log(currentPhoto);
     } else {
       setCurrentProfile(images.id);
     }
@@ -26,6 +27,7 @@ function Profile({images}) {
   const handleRemove= () => {
     setCurrentProfile(null)
   }
+
     return (
         <>
           <div className={`${currentProfile === images.id ? 'active' : ""} profilecard`} onMouseDown={handleClick} onMouseLeave={handleRemove}>

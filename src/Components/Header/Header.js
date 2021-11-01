@@ -59,8 +59,7 @@ function Header({mobileView, setSearch}) {
           </div>}
           <div className="search">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search..." onKeyUp={onChangeSearch}/>
-            <div class="search-btn">Search</div>
+            <input type="text" placeholder="Search..." onKeyDown={onChangeSearch}/>
           </div>
           <Notification/>
           <User/>

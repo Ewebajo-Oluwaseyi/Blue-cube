@@ -12,31 +12,31 @@ function Navbar() {
           </div>
           <ul>
             <li>
-              <i class="fas fa-home"></i>
-              <span>Home</span>
+            <span className="iconify" data-icon="ant-design:home-filled" data-inline="false" style={{marginRight: '1rem'}}></span>
+              Home
             </li>
             <li>
-              <i class="fas fa-envelope"></i>
-              <span>Message</span>
+              <span className="iconify inline mr-2" data-icon="bx:bxs-message-alt" data-inline="false" style={{marginRight: '1rem'}}></span>
+              Message
             </li>
           </ul>
          <p>SHARE</p>
           <ul>
             <li>
-              <i class="fas fa-envelope"></i>
-              <span>Banking</span>
+              <span className="iconify inline mr-2" data-icon="ic:sharp-grade" data-inline="false" style={{marginRight: '1rem'}}></span>
+              Ranking
             </li>
             <li>
-              <i class="fas fa-envelope"></i>
-              <span>Challenge</span>
+              <span className="iconify inline mr-2" data-icon="ic:baseline-task" data-inline="false" style={{marginRight: '1rem'}}></span>
+              Challenge
             </li>
             <li>
-              <i class="fas fa-envelope"></i>
-              <span>Party</span>
+              <span className="iconify inline mr-2" data-icon="emojione-monotone:party-popper" data-inline="false" style={{marginRight: '1rem'}}></span>
+              Party
             </li>
             <li>
-              <i class="fas fa-envelope"></i>
-              <span>Connect</span>
+              <span className="iconify inline mr-2" data-icon="entypo:link" data-inline="false" style={{marginRight: '1rem'}}></span>
+              Connect
             </li>
           </ul>
         </div>

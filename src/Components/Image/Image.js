@@ -7,7 +7,7 @@ function Image({search}) {
     const [loading, setLoading] = useState(false);
     const [Images, setImages] = useState([])
     const id = '6YS2Fq0MYbOgnwoN5VE8tsZLIKJ196uxpBPn2ZCEg-Y';
-    const [query, setQuery]=useState("a");
+    const [query, setQuery]=useState("man");
    // console.log(query)
    // setQuery(localStorage.getItem('query'))
 
@@ -17,22 +17,19 @@ function Image({search}) {
       }
       async function fetchImage() {
             setLoading(true)
-            const resProfile = await axios.get(`https://api.unsplash.com/photos?query=${query}&client_id=${id}`, {
-              headers:{
-                'Accept-Version': 'v1',
-              }
-              }).then(
+            const resProfile = await axios.get(`https://api.unsplash.com/search/users/?page=1&per_page=10&query=${query}&client_id=${id}`).then(
                 async (data) => {
-                 let results = data.data.slice(0, 8);
-                 //   console.log(results)
+                 // console.log(data)
+                 let results = data.data.results.slice(0, 8);
+  
                   let final = results.map((result) => {
                     let profile = {
                       id: result.id,
-                      username: result.user.username,
-                      first_name: result.user.first_name,
-                      last_name: result.user.last_name,
-                      photoLink: result.user.links.photos + `?client_id=${id}`,
-                      total_photos: result.user.total_photos,
+                      username: result.username,
+                      first_name: result.first_name,
+                      last_name: result.last_name,
+                      photoLink: result.links.photos + `?client_id=${id}`,
+                      total_photos: result.total_photos,
                     };
                       return profile;
                     });
@@ -62,8 +59,7 @@ function Image({search}) {
                   photo.length = Math.min(photo.length, 4);
                   resProfile[index].photos = photo;
                 }); 
-
-                setImages(resProfile);
+                setImages(resProfile.filter(value => value.photos.length !== 0));
                 setLoading(false);
                 //console.log(resProfile);
               })
